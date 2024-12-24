@@ -7,13 +7,21 @@ int main()
     int size;
     std::cout << "Введите размер сетки: ";
     std::cin >> size;
-
-    if (size <= 0)
+    bool visualizete;
+    while (size <= 0)
     {
         std::cout << "Размер сетки должен быть больше 0!\n";
-        return 1;
+        std::cout << "Введите размер сетки: ";
+        std::cin >> size;
     }
-
+    std::cout<<"Включить визуализацию?[y/n]\n";
+    std::string command;
+    std::getline(std::cin,command);
+    if(command=="y" || command=="Y"){
+        visualizete=true;
+    }else{
+        visualizete=false;
+    }
     while (true)
     {
         std::vector<std::vector<int>> grid(size, std::vector<int>(size, 0));
@@ -32,7 +40,7 @@ int main()
         std::cout << "Введите начальную позицию для Деда (x y): ";
         std::cin >> rangerStart.x >> rangerStart.y;
 
-        findPoachers(grid, rangerStart, poachers);
+        findPoachers(grid, rangerStart, poachers,visualizete);
     }
 
     return 0;

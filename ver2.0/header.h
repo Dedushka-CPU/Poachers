@@ -31,7 +31,7 @@ struct Node {
 
 int dijkstra(const std::vector<std::vector<int>> &grid, const Position &start, const Position &end);
 void visualizeGrid(const std::vector<std::vector<int>> &grid, const Position &current, const std::set<Position> &poachersPos);
-void findPoachers(std::vector<std::vector<int>> &grid, Position &rangerStart, std::vector<Poacher> &poachers);
+void findPoachers(std::vector<std::vector<int>> &grid, Position &rangerStart, std::vector<Poacher> &poachers,bool visualizete);
 int getValidIntegerInput();
 std::vector<Poacher> inputPoachers(int numPoachers, int size);
 
