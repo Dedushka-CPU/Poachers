@@ -10,7 +10,6 @@
 #include <climits>
 #include <utility>
 #include <limits>
-#include <windows.h>
 
 struct Position {
     int x, y;
