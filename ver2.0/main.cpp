@@ -2,8 +2,6 @@
 
 int main()
 {
-    SetConsoleOutputCP(65001);
-    SetConsoleCP(65001);
     int size;
     std::cout << "Введите размер сетки: ";
     std::cin >> size;
@@ -13,14 +11,6 @@ int main()
         std::cout << "Размер сетки должен быть больше 0!\n";
         std::cout << "Введите размер сетки: ";
         std::cin >> size;
-    }
-    std::cout<<"Включить визуализацию?[y/n]\n";
-    std::string command;
-    std::getline(std::cin,command);
-    if(command=="y" || command=="Y"){
-        visualizete=true;
-    }else{
-        visualizete=false;
     }
     while (true)
     {
@@ -40,7 +30,7 @@ int main()
         std::cout << "Введите начальную позицию для Деда (x y): ";
         std::cin >> rangerStart.x >> rangerStart.y;
 
-        findPoachers(grid, rangerStart, poachers,visualizete);
+        findPoachers(grid, rangerStart, poachers);
     }
 
     return 0;
