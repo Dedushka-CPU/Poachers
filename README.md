@@ -47,7 +47,7 @@
 1. Откройте **CMakeLists.txt** и убедитесь, что он содержит настройки для статической сборки:
 
 ```cmake
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 2.8)
 
 project(PoachersFind)
 
@@ -56,7 +56,7 @@ set(CMAKE_CXX_STANDARD 17)
 # Статическая сборка
 set(CMAKE_STATIC_LIBRARY_FLAGS "-static")
 
-add_executable(PoachersFind main.cpp functions.cpp)
+add_executable(PoachersFind ver2.0/main.cpp ver2.0/functions.cpp)
 
 target_include_directories(PoachersFind PRIVATE ${CMAKE_SOURCE_DIR})
 ```
@@ -81,7 +81,7 @@ project(PoachersFind)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(PoachersFind main.cpp functions.cpp)
+add_executable(PoachersFind ver2.0/main.cpp ver2.0/functions.cpp)
 
 target_include_directories(PoachersFind PRIVATE ${CMAKE_SOURCE_DIR})
 ```
