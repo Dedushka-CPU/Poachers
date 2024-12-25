@@ -75,7 +75,7 @@ make
 Для динамической сборки, удалите строки, отвечающие за статическую линковку, и используйте стандартный конфиг:
 
 ```cmake
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 2.8)
 
 project(PoachersFind)
 
