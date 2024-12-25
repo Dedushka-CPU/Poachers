@@ -78,7 +78,7 @@ void visualizeGrid(const std::vector<std::vector<int>> &grid, const Position &cu
     std::cout << "\n";
 }
 
-void findPoachers(std::vector<std::vector<int>> &grid, Position &rangerStart, std::vector<Poacher> &poachers, bool visualizete)
+void findPoachers(std::vector<std::vector<int>> &grid, Position &rangerStart, std::vector<Poacher> &poachers)
 {
     Position current = rangerStart;
     int totalDistance = 0;
@@ -129,10 +129,7 @@ void findPoachers(std::vector<std::vector<int>> &grid, Position &rangerStart, st
         foundPoachers.push_back(poachers[closestPoacherIdx].name);
         current = closestPoacherPos;
         poachersPos.erase(current);
-        if (visualizete == true)
-        {
-            visualizeGrid(grid, current, poachersPos);
-        }
+        visualizeGrid(grid, current, poachersPos);
 
         std::cout << "Нашли браконьера: " << poachers[closestPoacherIdx].name << " на позиции (" << current.x << ", " << current.y << ").\n";
     }
