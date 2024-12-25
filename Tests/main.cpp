@@ -2,8 +2,6 @@
 
 int main()
 {
-    SetConsoleOutputCP(65001);
-    SetConsoleCP(65001);
     int size;
     std::cout << "Введите размер сетки: ";
     std::cin >> size;
