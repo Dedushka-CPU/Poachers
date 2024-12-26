@@ -78,15 +78,17 @@ O(P \cdot L \cdot N^2 \log N) = O(10 \cdot 5 \cdot 100^2 \cdot \log 100) \approx
 cmake_minimum_required(VERSION 2.8)
 
 project(PoachersFind)
-option(USE_STATIC_LINKING ON)
-set(CMAKE_CXX_STANDARD 17)
 
-# Статическая сборка
-set(CMAKE_STATIC_LIBRARY_FLAGS "-static")
+option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
+
+add_liblary(PoachersFind ver2.0/functions.cpp)
+
+target_include_directories(PoachersFind PUBLIC ${CMAKE_SOURCE_DIR})
 
 add_executable(PoachersFind ver2.0/main.cpp ver2.0/functions.cpp)
 
-target_include_directories(PoachersFind PRIVATE ${CMAKE_SOURCE_DIR})
+target_link_libraries(PoachersFind PRIVATE PoachersFind)
+
 ```
 
 2. В терминале проекта выполните команду для сборки:
@@ -107,11 +109,15 @@ cmake_minimum_required(VERSION 2.8)
 
 project(PoachersFind)
 
-set(CMAKE_CXX_STANDARD 17)
+option(BUILD_SHARED_LIBS "Build using shared libraries" OFF)
+
+add_liblary(PoachersFind ver2.0/functions.cpp)
+
+target_include_directories(PoachersFind PUBLIC ${CMAKE_SOURCE_DIR})
 
 add_executable(PoachersFind ver2.0/main.cpp ver2.0/functions.cpp)
 
-target_include_directories(PoachersFind PRIVATE ${CMAKE_SOURCE_DIR})
+target_link_libraries(PoachersFind PRIVATE PoachersFind)
 ```
 
 Для сборки с динамическими библиотеками выполните следующие команды:
