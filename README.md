@@ -78,7 +78,7 @@ O(P \cdot L \cdot N^2 \log N) = O(10 \cdot 5 \cdot 100^2 \cdot \log 100) \approx
 cmake_minimum_required(VERSION 2.8)
 
 project(PoachersFind)
-
+option(USE_STATIC_LINKING ON)
 set(CMAKE_CXX_STANDARD 17)
 
 # Статическая сборка
