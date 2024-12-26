@@ -81,13 +81,14 @@ project(PoachersFind)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 
-add_liblary(PoachersFind ver2.0/functions.cpp)
+add_library(PoachersFind ver2.0/functions.cpp)
 
 target_include_directories(PoachersFind PUBLIC ${CMAKE_SOURCE_DIR})
 
-add_executable(PoachersFind ver2.0/main.cpp ver2.0/functions.cpp)
+add_executable(prog ver2.0/main.cpp ver2.0/functions.cpp)
 
-target_link_libraries(PoachersFind PRIVATE PoachersFind)
+target_link_libraries(prog PRIVATE PoachersFind)
+
 
 ```
 
@@ -98,11 +99,9 @@ cmake -DCMAKE_BUILD_TYPE=Release .
 make
 ```
 
-3. После завершения сборки вы получите исполнимый файл в каталоге `./build/Release/`.
+3. После завершения сборки вы получите исполнимый файл.
 
 ### Динамическая сборка
-
-Для динамической сборки, удалите строки, отвечающие за статическую линковку, и используйте стандартный конфиг:
 
 ```cmake
 cmake_minimum_required(VERSION 2.8)
@@ -111,13 +110,14 @@ project(PoachersFind)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" OFF)
 
-add_liblary(PoachersFind ver2.0/functions.cpp)
+add_library(PoachersFind ver2.0/functions.cpp)
 
 target_include_directories(PoachersFind PUBLIC ${CMAKE_SOURCE_DIR})
 
-add_executable(PoachersFind ver2.0/main.cpp ver2.0/functions.cpp)
+add_executable(prog ver2.0/main.cpp ver2.0/functions.cpp)
 
-target_link_libraries(PoachersFind PRIVATE PoachersFind)
+target_link_libraries(prog PRIVATE PoachersFind)
+
 ```
 
 Для сборки с динамическими библиотеками выполните следующие команды:
@@ -125,17 +125,6 @@ target_link_libraries(PoachersFind PRIVATE PoachersFind)
 ```bash
 cmake -DCMAKE_BUILD_TYPE=Release .
 make
-```
-
-### Запуск программы
-
-После сборки программы, вы можете запустить её следующим образом:
-
-1. Перейдите в каталог с собранным исполнимым файлом.
-2. Запустите программу с помощью команды:
-
-```bash
-./PoachersFind
 ```
 
 ### Пример работы программы
