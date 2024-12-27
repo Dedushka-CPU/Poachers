@@ -27,9 +27,24 @@ int main()
         std::vector<Poacher> poachers = inputPoachers(numPoachers, size);
         Position rangerStart;
 
-        std::cout << "Введите начальную позицию для Деда (x y): ";
-        std::cin >> rangerStart.x >> rangerStart.y;
-
+        
+        while(true){
+			std::cout << "Введите начальную позицию для Деда (x y): ";
+			std::cin >> rangerStart.x >> rangerStart.y;
+                if (std::cin.fail())
+                {
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "Пожалуйста, введите целые числа для координат.\n";
+                }
+                else if (rangerStart.x >= size || rangerStart.y >= size || rangerStart.x < 0 || rangerStart.y < 0)
+                {
+                    std::cout << "Введите правильные координаты в диапазоне 0-" << size - 1 << "\n";
+                }
+                else{
+					break;
+				}
+		}
         findPoachers(grid, rangerStart, poachers);
     }
 
