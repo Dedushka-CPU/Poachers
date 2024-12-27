@@ -47,8 +47,9 @@
 cmake -S . -B build
 ```
 
-3.```bash
-cd build 
+3.
+```bash
+cd build
 make
 ```
 
